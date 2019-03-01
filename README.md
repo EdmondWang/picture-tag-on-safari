@@ -7,5 +7,14 @@ I am facing a Safari only problem.
 I use jQuery to detach() then append() one picture tag, which causes Safari to request same image twice. 
 That is not expected. And there is no such problem in Chrome and Firefox.
 
+**To setup**
+
+npm install
+
+npm start
+
+Access http://localhost:3000/
+
+
 
 
