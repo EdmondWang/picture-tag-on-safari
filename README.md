@@ -15,6 +15,20 @@ npm start
 
 Access http://localhost:3000/
 
+**To reprodcue the problem**
+
+open network panel of developer tool
+
+click "move to red" button
+
+check JPG request is sent in network panel
+
+click "move to blue" button
+
+check JPG request is sent in network panel
+
+
+
 
 
 
