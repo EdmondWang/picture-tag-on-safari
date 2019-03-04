@@ -2,26 +2,26 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
-  div#room-blue
+  p #{title}
+  div#room-blue.room
     div#desk
       picture
         source(type='image/webp', srcset='images/toyota-prius-D@1x.webp 1x, images/toyota-prius-D@2x.webp 2x')
         source(type='image/jpeg', srcset='images/toyota-prius-D@1x.jpg 1x, images/toyota-prius-D@2x.jpg 2x')
         img(src='images/toyota-prius-D@1x.jpg', alt='prius')
-        div hard code
-  div#room-red
-  button(onclick='detach()') move to red
-  button(onclick='revert()') move to blue
+  div#room-red.room
+  div
+  button(onclick='moveToRed()') move to red
+  button(onclick='moveToBlue()') move to blue
   script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js')
   script.
-    function detach() {
+    function moveToRed() {
       let $slides = $('#desk');
       $('#desk').detach();
       $('#room-red').append($slides);
     }
 
-    function revert() {
+    function moveToBlue() {
        let $slides = $('#desk');
        $('#desk').detach();
        $('#room-blue').append($slides);
