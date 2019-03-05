@@ -17,7 +17,14 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+/* set Cache-Control here will disallow Safari send same JPG request each time picture DOM element get detached then append().
+
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(express.static(path.join(__dirname, 'public'), {maxAge: "30d"}));
+*/
+app.use(express.static(path.join(__dirname, 'public'), {maxAge: "30d"}));
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
